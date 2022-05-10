@@ -1,0 +1,29 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function SetName() {
+        let name = document.querySelector("#txtName").value;
+        let result = document.querySelector("#result");
+        result.innerHTML = name;
+      }
+    </script>
+  </head>
+  <body>
+    <main>
+      <form>
+        <label> Name : <input type="text" id="txtName" /> </label>
+        <button onclick="SetName()" type="button">Submit</button>
+      </form>
+
+      <div id="result">
+        <script>
+          alert(3);
+        </script>
+      </div>
+    </main>
+  </body>
+</html>

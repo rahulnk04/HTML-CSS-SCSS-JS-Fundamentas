@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/react/15.7.0/react.js"
+      integrity="sha512-jw5xwED/d4e6x9q10ZuLVHnQ4bRsG5wQPL7jAptgjZJbpYs9qF9Pt8vRLV5ohSOt/jhr6B7fKfALkK/IMIyUmQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/15.7.0/react-dom.js"
+      integrity="sha512-ocEXIZS1zCiWd/ngdugbSKWpoEBEp276o7oqWogajd3GsbAwNmL9kAf2nvtmWhGmvcF8Tlcvli/0ABgAwAxeAQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0-alpha1/JSXTransformer.js"></script>
+  </head>
+  <body>
+    <div class="root"></div>
+
+    <script type="text/jsx">
+      function TestXSS(props) {
+        return (
+          <div>
+            <p>{props.url}</p>
+            <a href={props.url}>Link !</a>
+          </div>
+        );
+      }
+
+      ReactDOM.render(
+        <TestXSS url="javascript:alert('Attacked')" />,
+        document.querySelector(".root")
+      );
+    </script>
+  </body>
+</html>

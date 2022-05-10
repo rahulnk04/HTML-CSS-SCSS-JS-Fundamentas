@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .button {
+        width: 80px;
+        background-color: lightblue;
+        border: 2px solid blue;
+        border-radius: 5px;
+        padding: 5px;
+        box-shadow: 3px 3px 3px gray;
+        cursor: pointer;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div tabindex="0">This is non focusable by default !</div> -->
+
+    <div class="button" tabindex="0" role="button">Button</div>
+
+    <button>Button as Button !</button>
+
+    <button aria-label="Close" onclick="myDialog.close()">
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        width="17"
+        height="17"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m.967 14.217 5.8-5.906-5.765-5.89L3.094.26l5.783 5.888L14.66.26l2.092 2.162-5.766 5.889 5.801 5.906-2.092 2.162-5.818-5.924-5.818 5.924-2.092-2.162Z"
+          fill="#000"
+        />
+      </svg>
+    </button>
+  </body>
+</html>
